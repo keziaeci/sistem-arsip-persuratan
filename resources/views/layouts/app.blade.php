@@ -22,13 +22,24 @@
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet"
     />
+    {{-- icon --}}
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+    
+    {{-- bootstrap core --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> --}}
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('/assets/css/sb-admin-2.min.css') }}" rel="stylesheet" />
     
     <!-- Bootstrap core JavaScript-->
     <script defer src="{{ asset('/assets/js/jquery.min.js') }}"></script>
-    <script defer src="{{ asset('/assets/js/bootstrap.bundle.min.js') }}"></script>
+    {{-- <script defer src="{{ asset('/assets/js/bootstrap.bundle.min.js') }}"></script> --}}
+    <script defer src="{{ asset('/assets/js/bootstrap.bundle.min2.js') }}"></script>
     
     <!-- Core plugin JavaScript-->
     <script defer src="{{ asset('/assets/js/jquery.easing.min.js') }}"></script>
@@ -75,7 +86,7 @@
         <footer class="sticky-footer bg-white">
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2021</span>
+            <span>Copyright &copy; SiapWolu 2022</span>
             </div>
         </div>
         </footer>
@@ -88,7 +99,7 @@
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
+        <i class="fi fi-rr-arrow-small-up"></i>
     </a>
 
     <!-- Logout Modal-->
@@ -124,7 +135,11 @@
             >
             Cancel
             </button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            @method('post')
+            <button class="btn btn-primary" type="submit" href="{{ route('logout') }}">Logout</button>
+            </form>
         </div>
         </div>
     </div>

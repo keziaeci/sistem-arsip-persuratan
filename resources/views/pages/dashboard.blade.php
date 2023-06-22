@@ -25,6 +25,9 @@
                           <div class="col mr-2">
                               <a class="link  text-xs font-weight-bold text-primary text-uppercase mb-1" href="./surat_masuk.php">
                                   Jumlah Surat Masuk</a>
+                                  <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                    {{ $surat_masuk }}
+                                  </div>
                               </div>
                               <div class="col-auto card-image">
                               <img src="icon/mail_icon.png">
@@ -42,6 +45,9 @@
                             <div class="col mr-2">
                                 <a class="link text-xs font-weight-bold text-danger text-uppercase mb-1" href="./surat_keluar.php">
                                     Jumlah Surat Keluar</a>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                      {{ $surat_keluar }}
+                                    </div>
                               </div>
                                 <div class="col-auto card-image">
                                     <img src="icon/send_icon.png">

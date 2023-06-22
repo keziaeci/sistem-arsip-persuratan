@@ -13,7 +13,9 @@ class SuratController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.laporan', [
+            'surats' => Surat::latest()->filter(request(['jenis', 'dari_tanggal', 'sampai_tanggal']))->paginate(10)->withQueryString()
+        ]);
     }
 
     /**

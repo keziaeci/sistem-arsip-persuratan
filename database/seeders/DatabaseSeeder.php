@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
+use Database\Seeders\UserRolePermissionSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call(UserRolePermissionSeeder::class);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Category::factory()->create([
+            'name' => 'Surat Masuk'
+        ]);
+
+        Category::factory()->create([
+            'name' => 'Surat Keluar'
+        ]);
     }
 }

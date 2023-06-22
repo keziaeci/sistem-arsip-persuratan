@@ -10,7 +10,7 @@
             </button>
 
             <!-- Topbar Search -->
-            <form
+            {{-- <form
             class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
             >
             <div class="input-group">
@@ -27,7 +27,7 @@
                 </button>
                 </div>
             </div>
-            </form>
+            </form> --}}
 
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
@@ -68,7 +68,7 @@
                 </div>
             </li>
 
-            <!-- Nav Item - Alerts -->
+            {{-- <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
                 <a
                 class="nav-link dropdown-toggle"
@@ -233,7 +233,7 @@
                 </div>
             </li>
 
-            <div class="topbar-divider d-none d-sm-block"></div>
+            <div class="topbar-divider d-none d-sm-block"></div> --}}
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
@@ -247,12 +247,12 @@
                 aria-expanded="false"
                 >
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-                    >Douglas konts</span
+                    >{{ Auth::user()->username }}</span
                 >
-                <img
+                {{-- <img
                     class="img-profile rounded-circle"
                     src="img/undraw_profile.svg"
-                />
+                /> --}}
                 </a>
                 <!-- Dropdown - User Information -->
                 <div
@@ -263,14 +263,14 @@
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                 </a>
-                <a class="dropdown-item" href="#">
+                {{-- <a class="dropdown-item" href="#">
                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                     Settings
                 </a>
                 <a class="dropdown-item" href="#">
                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                     Activity Log
-                </a>
+                </a> --}}
                 <div class="dropdown-divider"></div>
                 <a
                     class="dropdown-item"
@@ -278,9 +278,8 @@
                     data-toggle="modal"
                     data-target="#logoutModal"
                 >
-                    <i
-                    class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
-                    ></i>
+                
+                    <i class="fi fi-ss-sign-out-alt"></i>
                     Logout
                 </a>
                 </div>
