@@ -7,8 +7,11 @@ id="accordionSidebar"
 class="sidebar-brand d-flex align-items-center justify-content-center"
 href="{{ route('dashboard') }}"
 >
-<div class="sidebar-brand-icon rotate-n-15">
-    <i class="fas fa-laugh-wink"></i>
+<div class="sidebar-brand-icon">
+    {{-- <i class="fas fa-laugh-wink"></i> --}}
+  <i>
+      <img src="{{ asset('assets/img/new_logo.png') }}" alt="" style="width: 35px;">
+    </i>
 </div>
 <div class="sidebar-brand-text mx-3">SiapWolu</div>
 </a>

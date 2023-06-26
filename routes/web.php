@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\SuratKeluarController;
 use App\Http\Controllers\SuratMasukController;
@@ -33,6 +34,10 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     
+    Route::get('/preview/{surat}', Controller::class)->name('preview');
+    Route::get('/preview/{surat}/laporan', [Controller::class, 'laporan'])->name('preview-laporan');
+    Route::get('/preview/{surat}/disposisi', [Controller::class, 'disposisi'])->name('disposisi');
+
     Route::post('/logout' , [AuthController::class, 'logout'])->name('logout');
     Route::get('/dashboard',[AuthController::class, 'dashboard'])->name('dashboard');
     Route::get('/laporan', [SuratController::class, 'index'])->name('laporan');

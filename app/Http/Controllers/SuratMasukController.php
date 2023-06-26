@@ -42,8 +42,8 @@ class SuratMasukController extends Controller
                 'asal_surat' => 'required',
                 'nomor_tanggal_surat' => 'required',
                 'perihal' => 'required',
-                'file' => 'required|file',
-                'disposisi' => 'nullable|file',
+                'file' => 'required|file|mimes:pdf|max:1000000',
+                'disposisi' => 'nullable|file|mimes:pdf|max:1000000',
             ]);
             
             $data['file'] = $request->file('file')->storePublicly('files/surat-masuk', 'public');

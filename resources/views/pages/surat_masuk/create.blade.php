@@ -15,10 +15,20 @@
                                     <label class="form-label" for="tanggal">Tanggal Terima </label>
                                     <input class="form-control" type="date" name="tanggal" id="tanggal" size="" required>
                                 </li>
+                                @error('tanggal') 
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                                 <li>
                                     <label class="form-label" for="nomor_surat">Nomor Surat </label>
                                     <input class="form-control" type="text" name="nomor_surat" id="nomor_surat" size="" required>
                                 </li>
+                                @error('nomor_surat') 
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
         
                                 <li>
                                     <label class="form-label" for="asal_surat">Asal Surat</label>
@@ -52,14 +62,22 @@
                             </ul>
                         </div>
                         <ul class="m-2 list-unstyled">
-                            <li>
-                                <button class="btn bg-primary text-light" type="submit" name="submit" 
-                                {{-- onclick="return confirm('Data yang dikirim tidak dapat diubah ,pastikan data sudah benar!')" --}}
-                                >Tambah Data </button>
-                            </li>
-                            <br>
-                            <a class=" material-symbols-outlined text-decoration-none" href="{{ route('surat-masuk') }}">arrow_back_ios</a>
-                            <!-- <a class="btn btn-outline-primary" href="index.php">Kembali</a> -->
+                            <div class="row m-2">
+                                <div class="col">
+                                    <a class=" material-symbols-outlined text-decoration-none" href="{{ route('surat-masuk') }}">
+                                        <i class="fi fi-br-angle-left"></i>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <li>
+                                        <button class="btn bg-primary text-light float-right" type="submit" name="submit" 
+                                        onclick="return confirm('Data yang dikirim tidak dapat diubah ,pastikan data sudah benar!')"
+                                        >Tambah Data </button>
+                                    </li>
+
+                                </div>
+                                
+                            </div>
                         </ul>
                     </div>
                 </form>

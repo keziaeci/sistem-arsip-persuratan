@@ -44,7 +44,7 @@
                     <td>{{$surat->asal_surat}}</td>
                     <td>{{$surat->nomor_tanggal_surat}}</td>
                     <td>{{$surat->perihal}}</td>
-                    <td> <a href="" class="btn btn-success">Preview</a> </td>
+                    <td> <a href="{{ route('preview' , $surat->id) }}" class="btn btn-success">Preview</a> </td>
                     @can('delete')
                     <td>
                         <form action="{{ route('sm-delete', $surat->id) }}" method="post">
@@ -57,7 +57,7 @@
                     @if (empty($surat->disposisi))
                         <td>Tidak ada</td>
                         @else
-                        <td><a href="" class="btn btn-success">Preview</a></td>
+                        <td><a href="{{ route('disposisi' , $surat->id) }}" class="btn btn-success">Preview</a></td>
                     @endif
                     </tr>
                 @endforeach

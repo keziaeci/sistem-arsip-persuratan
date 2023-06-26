@@ -10,7 +10,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>SiapWolu</title>
 
     <!-- Custom fonts for this template-->
     <link
@@ -24,9 +24,9 @@
     />
     {{-- icon --}}
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
     
     {{-- bootstrap core --}}
@@ -46,6 +46,9 @@
     
     <!-- Custom scripts for all pages-->
     <script defer src="{{ asset('/assets/js/sb-admin-2.min.js') }}"></script>
+
+    {{-- chart js --}}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     {{-- <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
@@ -83,7 +86,7 @@
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        <footer class="sticky-footer bg-white">
+        <footer class="sticky-footer sticky-bottom bg-white">
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
             <span>Copyright &copy; SiapWolu 2022</span>
@@ -146,5 +149,6 @@
     </div>
 
     @yield('scripts')
+    @stack('js')
 </body>
 </html>

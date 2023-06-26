@@ -4,9 +4,11 @@
             <!-- Sidebar Toggle (Topbar) -->
             <button
             id="sidebarToggleTop"
-            class="btn btn-link d-md-none rounded-circle mr-3"
+            class="btn btn-link text-decoration-none d-md-none rounded-circle mr-3 "
             >
-            <i class="fa fa-bars"></i>
+            {{-- <i class="fi fi-rr-apps"></i> --}}
+            <i class="fi fi-br-menu-burger"></i>
+            {{-- <i class="fa fa-bars"></i> --}}
             </button>
 
             <!-- Topbar Search -->
@@ -32,7 +34,7 @@
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
+            {{-- <li class="nav-item dropdown no-arrow d-sm-none">
                 <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -66,7 +68,7 @@
                     </div>
                 </form>
                 </div>
-            </li>
+            </li> --}}
 
             {{-- <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
@@ -249,6 +251,8 @@
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"
                     >{{ Auth::user()->username }}</span
                 >
+
+                <i class="fi fi-sr-user"></i>
                 {{-- <img
                     class="img-profile rounded-circle"
                     src="img/undraw_profile.svg"
