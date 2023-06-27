@@ -52,10 +52,11 @@ color: white;
                                 <input class="form-control bg-input" autocomplete="false" type="password" name="password" id="password">
                             </li> 
                             
-                            {{-- <li class="p-0 fw-semibold">
+                            <li class="p-0 fw-semibold">
                                 <input class="d-inline" type="checkbox" name="remember" id="remember">
                                 <label class="form-label" for="remember">Remember me</label>
-                            </li> --}}
+                            </li>
+                            
                             @if (session()->has('failed'))
                                 <p class="text-danger fst-italic fw-semibold">
                                     {{ session('failed') }}

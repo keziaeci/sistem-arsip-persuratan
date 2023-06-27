@@ -20,7 +20,7 @@ href="{{ route('dashboard') }}"
 <hr class="sidebar-divider my-0" />
 
 <!-- Nav Item - Dashboard -->
-<li class="nav-item active">
+<li class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
 <a class="nav-link" href="{{ route('dashboard') }}">
     <i class="fi fi-sr-chart-tree-map"></i>
     <span>Dashboard</span></a
@@ -28,7 +28,7 @@ href="{{ route('dashboard') }}"
 </li>
 
 {{--  Nav Item - Pages Collapse Menu  --}}
-<li class="nav-item ">
+<li class="nav-item {{ request()->routeIs('surat-masuk') || request()->routeIs('surat-keluar') ? 'active' : '' }}">
 <a
     class="nav-link collapsed"
     href="#"
@@ -55,7 +55,7 @@ href="{{ route('dashboard') }}"
 </div>
 </li>
 
-<li class="nav-item active">
+<li class="nav-item {{ request()->routeIs('laporan') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('laporan') }}">
         <i class="fi fi-sr-file-chart-line"></i>
         {{-- <i class="fas fa-fw fa-tachometer-alt"></i> --}}
@@ -162,7 +162,9 @@ href="{{ route('dashboard') }}"
 
 <!-- Sidebar Toggler (Sidebar) -->
 <div class="text-center d-none d-md-inline">
-<button class="rounded-circle border-0" id="sidebarToggle"></button>
+<button class="rounded-circle border-0" id="sidebarToggle">
+    
+</button>
 </div>
 
 <!-- Sidebar Message -->

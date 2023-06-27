@@ -36,31 +36,39 @@
                         <th>Disposisi</th>
                     </tr>
                     
-                @foreach ($surats as $surat)
-                    <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ date('d/m/Y' , strtotime($surat->tanggal)) }}</td>
-                    <td>{{$surat->nomor_surat}}</td>
-                    <td>{{$surat->asal_surat}}</td>
-                    <td>{{$surat->nomor_tanggal_surat}}</td>
-                    <td>{{$surat->perihal}}</td>
-                    <td> <a href="{{ route('preview' , $surat->id) }}" class="btn btn-success">Preview</a> </td>
-                    @can('delete')
-                    <td>
-                        <form action="{{ route('sm-delete', $surat->id) }}" method="post">
-                        @method('DELETE')
-                        @csrf
-                            <button class="btn btn-danger" type="submit" onclick="return confirm('Apakah anda yakin?')">Hapus</button>
-                        </form>
-                    </td>
-                    @endcan
-                    @if (empty($surat->disposisi))
-                        <td>Tidak ada</td>
-                        @else
-                        <td><a href="{{ route('disposisi' , $surat->id) }}" class="btn btn-success">Preview</a></td>
+                    {{-- {{ dd($surats->isEmpty()); }} --}}
+                    @if ($surats->isEmpty())
+                        <tr class="">
+                            <td>Tidak ada surat</td>
+                        </tr>
+                    @else
+                        @foreach ($surats as $surat)
+                        <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ date('d/m/Y' , strtotime($surat->tanggal)) }}</td>
+                        <td>{{$surat->nomor_surat}}</td>
+                        <td>{{$surat->asal_surat}}</td>
+                        <td>{{$surat->nomor_tanggal_surat}}</td>
+                        <td>{{$surat->perihal}}</td>
+                        <td> <a href="{{ route('preview' , $surat->id) }}" class="btn btn-success">Preview</a> </td>
+                        @can('delete')
+                        <td>
+                            <form action="{{ route('sm-delete', $surat->id) }}" method="post">
+                            @method('DELETE')
+                            @csrf
+                                <button class="btn btn-danger" type="submit" onclick="return confirm('Apakah anda yakin?')">Hapus</button>
+                            </form>
+                        </td>
+                        @endcan
+                        @if (empty($surat->disposisi))
+                            <td>Tidak ada</td>
+                            @else
+                            <td><a href="{{ route('disposisi' , $surat->id) }}" class="btn btn-success">Preview</a></td>
+                        @endif
+                        </tr>
+                    @endforeach
+                        
                     @endif
-                    </tr>
-                @endforeach
                     
                 </table>
             </div>

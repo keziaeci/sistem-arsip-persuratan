@@ -32,8 +32,6 @@ class AuthController extends Controller
         ->orderBy(DB::raw('MONTH(tanggal)'),'ASC')
         ->pluck('count', 'm');
 
-        // dd(compact('sm', 'sk'));
-
         return view('pages.dashboard', [
             'surat_masuk' => $jumlah_sm,
             'surat_keluar' => $jumlah_sk,
@@ -47,7 +45,11 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
 
-        if(Auth::attempt($credentials)) {
+        $remember = $request->has('remember') ? true : false;
+
+        if(Auth::attempt($credentials,$remember)) {
+            return redirect('/dashboard');
+        } else {
             $request->session()->regenerate();
             return redirect('/dashboard');
         }

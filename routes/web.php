@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\SuratKeluarController;
 use App\Http\Controllers\SuratMasukController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,8 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     
+    Route::get('/user/profile' ,  [UserController::class , 'index'])->name('profile');
+
     Route::get('/preview/{surat}', Controller::class)->name('preview');
     Route::get('/preview/{surat}/laporan', [Controller::class, 'laporan'])->name('preview-laporan');
     Route::get('/preview/{surat}/disposisi', [Controller::class, 'disposisi'])->name('disposisi');

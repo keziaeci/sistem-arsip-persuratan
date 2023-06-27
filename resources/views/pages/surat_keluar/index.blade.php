@@ -31,9 +31,9 @@
                     @endcan
                     <th>Laporan</th>
                 </tr>
-                @if (empty($surats))
+                @if ($surats->isEmpty())
                     <tr>
-                        hshh    
+                        <td class="colspan-4">Tidak ada surat</td>
                     </tr>
                 @else
                     @foreach ($surats as $surat)

@@ -128,7 +128,7 @@
             </button>
         </div>
         <div class="modal-body">
-            Select "Logout" below if you are ready to end your current session.
+            Apakah Anda yakin ingin logout? Semua sesi Anda akan ditutup dan Anda akan keluar dari akun Anda.   
         </div>
         <div class="modal-footer">
             <button
@@ -141,7 +141,7 @@
             <form action="{{ route('logout') }}" method="POST">
             @csrf
             @method('post')
-            <button class="btn btn-primary" type="submit" href="{{ route('logout') }}">Logout</button>
+            <button class="btn btn-primary" type="submit">Logout</button>
             </form>
         </div>
         </div>
