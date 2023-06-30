@@ -36,6 +36,8 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     
     Route::get('/user/profile' ,  [UserController::class , 'index'])->name('profile');
+    Route::get('/user/profile/edit' ,  [UserController::class , 'edit'])->name('profile-edit');
+    Route::patch('/user/profile/update/{user}' ,  [UserController::class , 'update'])->name('profile-update');
 
     Route::get('/preview/{surat}', Controller::class)->name('preview');
     Route::get('/preview/{surat}/laporan', [Controller::class, 'laporan'])->name('preview-laporan');
