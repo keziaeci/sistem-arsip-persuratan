@@ -20,7 +20,6 @@ class UserController extends Controller
     }
 
     function update(Request $request, User $user) {
-        // dd($user);
         try {
             $validatedData = $request->validate([
                 'old-pw' => 'required',

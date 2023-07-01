@@ -4,6 +4,12 @@
             <h3 class="fw-semibold text-black">Daftar Surat Masuk</h3>               
         </div>
     </div>
+    @if (session()->has('success'))
+    <div class="alert alert-success alert-dismissible  show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="card shadow-2">
         <div class="card-header">
             <div class="row">
@@ -18,6 +24,7 @@
             </form>
             </div>
         </div>
+        
         <div class="card-body p-1 m-0">
             {{-- table --}}
             <div class=" table-responsive">
@@ -36,10 +43,9 @@
                         <th>Disposisi</th>
                     </tr>
                     
-                    {{-- {{ dd($surats->isEmpty()); }} --}}
                     @if ($surats->isEmpty())
-                        <tr class="">
-                            <td>Tidak ada surat</td>
+                        <tr>
+                            <td class="text-center" colspan="8">Tidak ada surat</td>
                         </tr>
                     @else
                         @foreach ($surats as $surat)
@@ -50,7 +56,7 @@
                         <td>{{$surat->asal_surat}}</td>
                         <td>{{$surat->nomor_tanggal_surat}}</td>
                         <td>{{$surat->perihal}}</td>
-                        <td> <a href="{{ route('preview' , $surat->id) }}" class="btn btn-success">Preview</a> </td>
+                        <td> <a href="{{ route('preview' , $surat->id) }}" target="_blank" class="btn btn-success">Preview</a> </td>
                         @can('delete')
                         <td>
                             <form action="{{ route('sm-delete', $surat->id) }}" method="post">
@@ -63,7 +69,7 @@
                         @if (empty($surat->disposisi))
                             <td>Tidak ada</td>
                             @else
-                            <td><a href="{{ route('disposisi' , $surat->id) }}" class="btn btn-success">Preview</a></td>
+                            <td><a href="{{ route('disposisi' , $surat->id) }}" target="_blank" class="btn btn-success">Preview</a></td>
                         @endif
                         </tr>
                     @endforeach

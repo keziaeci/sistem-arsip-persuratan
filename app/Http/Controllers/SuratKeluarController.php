@@ -56,7 +56,7 @@ class SuratKeluarController extends Controller
                 'laporan' => $data['laporan'],
             ]);
 
-            return redirect()->route('surat-keluar');
+            return redirect()->route('surat-keluar')->with('success', 'Surat Berhasil Ditambahkan!');
         } catch (\Throwable $th) {
             return $th->getMessage();
         }
@@ -107,7 +107,7 @@ class SuratKeluarController extends Controller
                 'laporan' => $data['laporan'],
             ]);
 
-            return redirect()->route('surat-keluar');
+            return redirect()->route('surat-keluar')->with('success', 'Surat Berhasil Diubah!');
         } catch (\Throwable $th) {
             return $th->getMessage();
         }

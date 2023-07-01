@@ -16,10 +16,6 @@ class Controller extends BaseController
     function __invoke(Surat $surat)
     {
         $file = $surat->file;
-        // dd(Storage::allDirectories());
-        // dd(file(storage_path( $surat->file)));
-        // $file = file(storage_path( $surat->file));
-        // $file = file(asset('storage/' . $surat->file));
         return view('pages.preview', [
             'file' => $file
         ]);

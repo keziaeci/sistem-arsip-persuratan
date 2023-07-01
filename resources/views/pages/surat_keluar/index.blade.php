@@ -4,6 +4,12 @@
         <h3 class="fw-semibold text-black">Daftar Surat Keluar</h3>               
         </div>
     </div>
+    @if (session()->has('success'))
+    <div class="alert alert-success alert-dismissible  show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="card shadow-2">
         <div class="card-header">
             <div class="row">
@@ -33,7 +39,7 @@
                 </tr>
                 @if ($surats->isEmpty())
                     <tr>
-                        <td class="colspan-4">Tidak ada surat</td>
+                        <td class="text-center" colspan="8">Tidak ada surat</td>
                     </tr>
                 @else
                     @foreach ($surats as $surat)
@@ -43,7 +49,7 @@
                             <td>{{$surat->nomor_surat}}</td>
                             <td>{{$surat->kepada}}</td>
                             <td>{{$surat->keperluan}}</td>
-                            <td> <a href="{{ route('preview', $surat->id) }}" class="btn btn-success">Preview</a> </td>
+                            <td> <a href="{{ route('preview', $surat->id) }}" target="_blank" class="btn btn-success">Preview</a> </td>
                             @can(['delete','update'])
                             <td>
                                 <form action="{{ route('sk-delete', $surat->id) }}" method="post">
@@ -57,7 +63,7 @@
                             @if (empty($surat->laporan))
                             <td>Tidak ada</td>
                             @else
-                            <td> <a href="{{ route('preview-laporan', $surat->id) }}" class="btn btn-success">Preview</a> </td>
+                            <td> <a href="{{ route('preview-laporan', $surat->id) }}" target="_blank" class="btn btn-success">Preview</a> </td>
                             @endif
                         </tr>
                     @endforeach

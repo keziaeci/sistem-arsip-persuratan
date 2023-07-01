@@ -19,10 +19,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('pages.dashboard');
-// });
-
 Route::middleware('guest')->group(function () {
     Route::get('/' , function () {
         return view('pages.welcome');

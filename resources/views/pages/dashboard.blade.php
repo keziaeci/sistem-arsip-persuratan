@@ -8,7 +8,6 @@
             </div>
             <div class="card-body">
               <h1></h1>
-                    {{-- {!! $chart1->renderHtml() !!} --}}
                     <canvas id="myChart"></canvas>
             </div>
           </div>
@@ -20,7 +19,6 @@
             </div>
             <div class="card-body">
               <h1></h1>
-                    {{-- {!! $chart1->renderHtml() !!} --}}
                     <canvas id="chart2"></canvas>
             </div>
           </div>
@@ -72,8 +70,6 @@
                   </div>
 
                   @section('scripts')
-                  {{-- {!! $chart1->renderChartJsLibrary() !!}
-                  {!! $chart1->renderJs() !!} --}}
                   @endsection
 
                   @push('js')

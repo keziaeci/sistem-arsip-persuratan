@@ -60,8 +60,7 @@ class SuratMasukController extends Controller
                 'disposisi' => $data['disposisi'],
             ]);
 
-            // return $surat;
-            return redirect()->route('surat-masuk');
+            return redirect()->route('surat-masuk')->with('success' , 'Surat Berhasil Ditambahkan!');
         } catch (\Throwable $th) {
             return $th->getMessage();
         }
