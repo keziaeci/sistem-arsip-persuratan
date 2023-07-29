@@ -19,7 +19,7 @@
                     </li>
                     <li>
                         <label class="form-label" for="">Akun dibuat pada</label>
-                        <input class="form-control" type="date" name="" id="" value="{{ date('Y-m-d' , strtotime($user->created_at));  }}" readonly>
+                        <input class="form-control" type="date" name="" id="" value="{{ date('Y-m-d' , strtotime($user->created_at)) }}" readonly>
                     </li>
                 </ul>
                 
